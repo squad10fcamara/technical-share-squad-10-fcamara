@@ -1,20 +1,27 @@
-function App() {
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import Login from './components/Login';
+import Home from './container/Home';
+import { fetchUser } from './utils/fetchUser';
+
+const App = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const user = fetchUser();
+
+    if (!user) {
+      navigate('/login');
+    }
+  }, []);
+
   return (
-    <div className="App">
-      <header>
-        <h1 className="text-green-500">Olá devs</h1>
-        <p>Squad 10 - o início.</p>
-        <a
-          className="text-green-600 visited:text-purple-600 no-underline"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="login" element={<Login />} />
+      <Route path="/*" element={<Home />} />
+    </Routes>
   );
-}
+};
 
 export default App;
