@@ -15,7 +15,7 @@ const Sidebar = ({ user, closeToggle }) => {
   };
 
   return (
-    <div className="flex flex-col justify-between bg-accent h-full overflow-y-scrikk min-w-210 hide-scrollbar">
+    <div className="flex flex-col justify-between bg-accent h-full 'overflow-y-scroll' min-w-210 hide-scrollbar">
       <div className="flex flex-col">
         <Link
           to="/"
