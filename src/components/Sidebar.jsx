@@ -35,7 +35,7 @@ const Sidebar = ({ user, closeToggle }) => {
             <AiOutlineTeam size={30} />
             Todos os membros
           </NavLink>
-          <h3 className="mt-2 px-5 text-base 2xl:text-xl text:font-extrabold text-gray-800">
+          <h3 className="text-white mt-2 px-5 text-base 2xl:text-xl text:font-extrabold text-grey-800">
             Áreas de atuação:
           </h3>
           {categories.slice(0, categories.length).map((category) => (
