@@ -47,7 +47,7 @@ const Sidebar = ({ user, closeToggle }) => {
               onClick={handleCloseSidebar}
               key={category.name}
             >
-              {category.name}
+              {category.value}
             </NavLink>
           ))}
         </div>
@@ -65,26 +65,29 @@ const Sidebar = ({ user, closeToggle }) => {
                       shadow-lg mx-3"
           onClick={handleCloseSidebar}
         >
-        <div class="text-white 
+          <div
+            class="text-white 
                     flex flex-col 
                     content-center 
                     gap-2 items-center 
                     py-4
                     place-content-center h-48
                     mx-16
-                    ">
-                      {/* mx-16 margin-left: 4rem;
-                      margin-right: 4rem;*/}        
+                    "
+          >
+            {/* mx-16 margin-left: 4rem;
+                      margin-right: 4rem;*/}
             <img
               src={user.image}
               alt="user-profile"
               className="w-10.5  
                          rounded-full
                          
-                         "/>
-              {/* Retirado h-10, teste de largura de w-10 para w-10.5*/} 
+                         "
+            />
+            {/* Retirado h-10, teste de largura de w-10 para w-10.5*/}
             <p>{user.userName}</p>
-        </div>
+          </div>
         </Link>
       )}
     </div>
