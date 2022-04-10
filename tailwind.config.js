@@ -4,6 +4,12 @@ module.exports = {
 
   theme: {
     extend: {
+      fontFamily: {
+        'body': ['"Montserrat"'],
+      },
+      fontSize: {
+        '64xl': '64px',
+      },
       margin: {
         320: '320px',
       },
@@ -16,6 +22,9 @@ module.exports = {
         656: '656px',
         880: '880px',
         508: '508px',
+        824: '824px',
+        488: '488px',
+
       },
       height: {
         80: '80px',
@@ -26,6 +35,8 @@ module.exports = {
         600: '600px',
         685: '685px',
         800: '800px',
+        412: '412px',
+        75: '75px',
         '90vh': '90vh',
       },
       flex: {
@@ -55,6 +66,7 @@ module.exports = {
       borderColor: {
         accent: '#FF4500',
       },
+      
       keyframes: {
         'slide-in': {
           '0%': {
@@ -92,6 +104,7 @@ module.exports = {
       pointer: 'pointer',
     },
   },
+  
   variants: {
     // backgroundColor: ['active'],
     extend: {},
