@@ -4,31 +4,25 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import { Link, Route, Routes } from 'react-router-dom';
 
 import { Sidebar } from '../components';
+import { client } from '../client';
 import logo from '../assets/images/fcamara-orange.png';
+import { userQuery } from '../utils/data';
 import { fetchUser } from '../utils/fetchUser';
 
 const Home = () => {
   const [toggleSidebar, setToggleSidebar] = useState(false);
   const [user, setUser] = useState(null);
 
-  const { email, imageUrl, name, googleId } = fetchUser();
-
-  const userInfo = {
-    _id: googleId,
-    email,
-    image: imageUrl,
-    userName: name,
-  };
-  console.log(userInfo);
-
+  const userInfo = fetchUser();
   // const scrollRef = useRef(null);
 
-  console.log(user);
-
-  console.log(toggleSidebar);
   useEffect(() => {
-    setUser(userInfo);
-  }, []);
+    const query = userQuery(userInfo?.googleId);
+
+    client.fetch(query).then((data) => {
+      setUser(data[0]);
+    });
+  }, [userInfo?.googleId]);
 
   // useEffect(() => {
   //   scrollRef.current.scrollTo(0, 0);
