@@ -15,7 +15,7 @@ const Feed = () => {
 
   useEffect(() => {
     setLoading(true);
-
+//modification of userEffect 
     if (categoryId) {
       const query = searchQuery(categoryId);
       client.fetch(query).then((data) => {
