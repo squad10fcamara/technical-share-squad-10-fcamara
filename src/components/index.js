@@ -7,5 +7,3 @@ export { default as Navbar } from './Navbar';
 export { default as Feed } from './Feed';
 export { default as ProfileDetail } from './ProfileDetail';
 export { default as Search } from './Search';
-
-/* Feat:Create content */
