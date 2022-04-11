@@ -5,9 +5,9 @@ import { categories } from '../utils/data';
 import logo from '../assets/images/fcamara-orange.png';
 
 const isNotActiveStyle =
-  'flex items-center px-5 gap-3 text-black hover:text-navColor hover:font-extrabold transition-all duration-200 ease-in-out capitalize';
+  'flex items-center px-5 gap-3 text-black hover:text-navColor hover:font-extrabold transition-all duration-200 ease-in-out';
 const isActiveStyle =
-  'flex items-center px-7 py-1 gap-3 ml-2 font-extrabold text-navColor rounded-l-full bg-white border-accent transition-all duration-200 ease-in-out capitalize';
+  'flex items-center px-7 py-1 gap-3 ml-2 font-extrabold text-navColor rounded-l-full bg-white border-accent transition-all duration-200 ease-in-out';
 
 const Sidebar = ({ user, closeToggle }) => {
   const handleCloseSidebar = () => {
@@ -32,7 +32,7 @@ const Sidebar = ({ user, closeToggle }) => {
             }
             onClick={handleCloseSidebar}
           >
-            <AiOutlineTeam size={30} />
+            <AiOutlineTeam fontSize={40} />
             Todos os membros
           </NavLink>
           <h3 className="text-white mt-2 px-5 text-base 2xl:text-xl text:font-extrabold text-grey-800">
@@ -55,39 +55,15 @@ const Sidebar = ({ user, closeToggle }) => {
       {user && (
         <Link
           to={`/user-profile/${user._id}`}
-          className="flex 
-                      my-5 
-                      mb-3 
-                      gap-2 
-                      p-2 
-                      items-center 
-                      bg- rounded-lg 
-                      shadow-lg mx-3"
+          className="flex my-5 mb-3 gap-2 p-2 items-center bg-orange-300 rounded-lg shadow-lg mx-3"
           onClick={handleCloseSidebar}
         >
-          <div
-            class="text-white 
-                    flex flex-col 
-                    content-center 
-                    gap-2 items-center 
-                    py-4
-                    place-content-center h-48
-                    mx-16
-                    "
-          >
-            {/* mx-16 margin-left: 4rem;
-                      margin-right: 4rem;*/}
-            <img
-              src={user.image}
-              alt="user-profile"
-              className="w-10.5  
-                         rounded-full
-                         
-                         "
-            />
-            {/* Retirado h-10, teste de largura de w-10 para w-10.5*/}
-            <p>{user.userName}</p>
-          </div>
+          <img
+            src={user.image}
+            alt="user-profile"
+            className="w-10 h-10 rounded-full"
+          />
+          <p>{user.userName}</p>
         </Link>
       )}
     </div>
