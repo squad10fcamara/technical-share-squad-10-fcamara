@@ -8,7 +8,7 @@
 
 Esta aplicação ficará disponivél online onde você poderá testar suas funcionalidades hands-on
 
-
+  Uma plataforma que promove o primeiro contato entre o quadro de funcionários da área de tecnologia da empresa FCamara, de modo a fomentar a aproximação de profissionais de diferentes níveis de atuação e níveis de experiências para a realização de um bate-papo ou de uma mentoria mais complexa.
 
 # Getting Started with Create React App
 
