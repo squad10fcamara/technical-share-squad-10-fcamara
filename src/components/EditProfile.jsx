@@ -27,10 +27,7 @@ const Profile = ({ user }) => {
       .string()
       .required('Informe o seu E-mail principal.')
       .email('Informe um e-mail válido.'),
-    githubPortfolio: yup
-      .string()
-      .default('www.nao-informado.com')
-      .url('Informe um endereço web válido.'),
+    githubPortfolio: yup.string().url('Informe um endereço web válido.'),
   });
 
   const {
@@ -52,6 +49,7 @@ const Profile = ({ user }) => {
     githubPortfolio,
   }) => {
     const post = {
+      userId: user._id,
       about,
       position,
       expertise,
@@ -117,7 +115,11 @@ const Profile = ({ user }) => {
             >
               <option value="">Selecione sua área de atuação</option>
               {categories.map((category) => {
-                return <option key={category.name}>{category.value}</option>;
+                return (
+                  <option key={category.name} value={category.name}>
+                    {category.value}
+                  </option>
+                );
               })}
             </select>
             {errors.expertise && (
