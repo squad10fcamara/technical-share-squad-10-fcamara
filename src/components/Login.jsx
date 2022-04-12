@@ -41,7 +41,7 @@ const Login = () => {
             {/* object-contain*/}
           </div>
           <h1 className="text-accent flex font-body text-64xl font-extrabold justify-center items-center p-2 pb-6">
-            Technical Share{' '}
+            Orange Share{' '}
           </h1>
 
           <div className="shadow-2xl">
