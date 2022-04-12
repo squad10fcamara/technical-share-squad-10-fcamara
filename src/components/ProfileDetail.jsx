@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 const ProfileDetail = () => {
   return (
-    <div>ProfileDetail</div>
-  )
-}
+    <div>
+      <h1>ProfileDetail</h1>
+    </div>
+  );
+};
 
-export default ProfileDetail
+export default ProfileDetail;

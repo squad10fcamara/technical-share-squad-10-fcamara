@@ -15,7 +15,7 @@ const Feed = () => {
 
   useEffect(() => {
     setLoading(true);
-//modification of userEffect 
+
     if (categoryId) {
       const query = searchQuery(categoryId);
       client.fetch(query).then((data) => {
@@ -39,7 +39,7 @@ const Feed = () => {
       <EmptyList image="empty" message="Nenhum membro cadastrado nessa área" />
     );
 
-  return <div>{profiles && <MasonryLayout pins={profiles} />}</div>;
+  return <div>{profiles && <MasonryLayout profiles={profiles} />}</div>;
 };
 
 export default Feed;

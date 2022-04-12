@@ -4,6 +4,64 @@ export const userQuery = (userId) => {
   return query;
 };
 
+export const searchQuery = (searchTerm) => {
+  const query = `*[_type == 'profile' 
+    && position match '${searchTerm}*' 
+    || expertise match '${searchTerm}*'
+    || postedBy -> {
+          userName
+      } match '${searchTerm}*']
+    {
+    _id,
+    about,
+    position,
+    expertise,
+    phone,
+    linkedIn,
+    email,
+    githubPortfolio,                    
+    postedBy -> {
+      _id,
+      userName,
+      image
+    },
+    save[] {
+      _key,
+      postedBy -> {
+        _id,
+        userName,
+        image
+      },
+    },
+  }`;
+
+  return query;
+};
+
+export const feedQuery = `*[_type == 'profile'] | order(createdAt asc) {
+  _id,
+  about,
+  position,
+  expertise,
+  phone,
+  linkedIn,
+  email,
+  githubPortfolio,  
+  postedBy -> {
+    _id,
+    userName,
+    image
+  },
+  save[] {
+    _key,
+    postedBy -> {
+      _id,
+      userName,
+      image
+    },
+  },
+}`;
+
 export const categories = [
   {
     name: 'backend',
