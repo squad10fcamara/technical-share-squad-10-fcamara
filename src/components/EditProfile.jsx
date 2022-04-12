@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller, control } from 'react-hook-form';
+import MaskedInput from 'react-input-mask';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 
@@ -21,8 +22,8 @@ const Profile = ({ user }) => {
     phone: yup.string().required('Digite o seu telefone.'),
     linkedIn: yup
       .string()
-      .required('Informe o seu linkedIn.')
-      .url('Informe um endereço web válido.'),
+      .url('Informe um endereço web válido.')
+      .required('Informe o seu linkedIn.'),
     email: yup
       .string()
       .required('Informe o seu E-mail principal.')
@@ -34,6 +35,7 @@ const Profile = ({ user }) => {
     register,
     handleSubmit,
     reset,
+    control,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
@@ -135,12 +137,24 @@ const Profile = ({ user }) => {
         <div className="mt-10 mb-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
           <div className="flex flex-col">
             <label className="text-white mb-2">Telefone</label>
-            <input
-              {...register('phone', { required: true })}
-              type="text"
-              error={errors.phone}
-              placeholder="Digite seu telefone"
-              className="w-full rounded-lg bg-panel p-2 text-navColor outline-none focus:ring-4 focus:ring-orange-700"
+            <Controller
+              name="phone"
+              control={control}
+              rules={{
+                required: true,
+              }}
+              render={({ field }) => (
+                <MaskedInput
+                  className="w-full rounded-lg bg-panel p-2 text-navColor outline-none focus:ring-4 focus:ring-orange-700"
+                  mask="(99) 99999-9999"
+                  maskChar=""
+                  placeholder="Digite o seu telefone"
+                  value={field.value}
+                  onChange={field.onChange}
+                >
+                  {(inputProps) => <input {...inputProps} type="text" />}
+                </MaskedInput>
+              )}
             />
             {errors.phone && (
               <span className="mt-2 text-red-500">{errors.phone.message}</span>
@@ -180,7 +194,9 @@ const Profile = ({ user }) => {
           <div className="flex flex-col">
             <label className="text-white mb-2">Github / Portfólio</label>
             <input
-              {...register('githubPortfolio', { required: true })}
+              {...register('githubPortfolio', {
+                required: false,
+              })}
               type="text"
               error={errors.githubPortfolio}
               placeholder="Digite o link do seu Github / Portfólio"
