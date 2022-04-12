@@ -11,7 +11,7 @@ const Profile = ({ profile: { postedBy, _id, position } }) => {
         onClick={() => navigate(`/profile-detail/${_id}`)}
         className="relative cursor-pointer w-auto hover:shadow-lg rounded-lg overflow-hidden transition-all duration-500 ease-in-out"
       >
-        <div className="flex flex-col rounded-lg w-full h-96 bg-navColor ">
+        <div className="flex flex-col rounded-lg w-full h-420 bg-navColor ">
           <img
             className="rounded-full w-48 h-48 mt-5 mx-auto border-4  border-accent"
             src={postedBy.image}
