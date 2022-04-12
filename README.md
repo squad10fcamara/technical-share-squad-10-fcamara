@@ -1,7 +1,7 @@
 
-|  | Orange Share - Image base sujeita a modificação |  |
+|  | Orange Share  |  |
 |----------|----------|----------|
-| Mentoria | ![image](https://user-images.githubusercontent.com/78885070/162639279-3143aa79-7184-44c5-8a95-84ee1e7a9f44.png) | mentorados |
+| Mentoria | ![image](https://user-images.githubusercontent.com/78885070/163049797-4efd361a-5b1c-403d-b807-2154f94b6b86.png) | mentorados |
 
 
 <h2>Sobre a aplicação</h2>
