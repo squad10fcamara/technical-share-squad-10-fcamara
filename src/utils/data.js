@@ -8,6 +8,7 @@ export const searchQuery = (searchTerm) => {
   const query = `*[_type == 'profile' 
     && position match '${searchTerm}*' 
     || expertise match '${searchTerm}*'
+    || about match '${searchTerm}*'
     || postedBy -> {
           userName
       } match '${searchTerm}*']
@@ -61,6 +62,26 @@ export const feedQuery = `*[_type == 'profile'] | order(createdAt asc) {
     },
   },
 }`;
+
+export const searchProfileByUserId = (userId) => {
+  const query = `*[_type == "profile" && userId == '${userId}']{
+    _id,  
+    userId, 
+    about,
+    position,
+    expertise,
+    phone,
+    email,
+    linkedIn,
+    githubPortfolio,
+    postedBy->{
+      _id,
+      userName,
+      image
+    }
+  }`;
+  return query;
+};
 
 export const categories = [
   {
