@@ -1,22 +1,22 @@
-import emptyImage from '../assets/images/empty.png';
-import notSaveImage from '../assets/images/no-data.png';
-import notFoundImage from '../assets/images/not-found.png';
+import noMember from '../assets/images/no-member.png';
+import noSearch from '../assets/images/no-search.png';
+import noProfile from '../assets/images/no-profile.png';
 
 const EmptyList = ({ image, message }) => {
   let imageSrc = '';
 
   switch (image) {
     case 'empty':
-      imageSrc = emptyImage;
+      imageSrc = noMember;
       break;
-    case 'notSave':
-      imageSrc = notSaveImage;
+    case 'noProfile':
+      imageSrc = noProfile;
       break;
     case 'notFound':
-      imageSrc = notFoundImage;
+      imageSrc = noSearch;
       break;
     default:
-      imageSrc = emptyImage;
+      imageSrc = noSearch;
   }
 
   return (

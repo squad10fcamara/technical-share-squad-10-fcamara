@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -6,8 +5,6 @@ import { client } from '../client';
 import { fetchUser } from '../utils/fetchUser';
 
 const Profile = ({ profile: { postedBy, _id, position, save } }) => {
-  const [postHovered, setPostHovered] = useState(false);
-
   const navigate = useNavigate();
 
   const user = fetchUser();
@@ -41,8 +38,6 @@ const Profile = ({ profile: { postedBy, _id, position, save } }) => {
   return (
     <div className="m-2 mb-4">
       <div
-        onMouseEnter={() => setPostHovered(true)}
-        onMouseLeave={() => setPostHovered(false)}
         onClick={() => navigate(`/profile-detail/${_id}`)}
         className="relative cursor-pointer w-auto hover:shadow-lg rounded-lg overflow-hidden transition-all duration-500 ease-in-out"
       >

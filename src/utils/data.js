@@ -109,6 +109,31 @@ export const userSavedProfilesQuery = (userId) => {
   return query;
 };
 
+export const userCreatedProfileQuery = (userId) => {
+  const query = `*[ _type == 'profile' && userId == '${userId}'] | order(_createdAt desc){
+    image{
+      asset->{
+        url
+      }
+    },
+    _id,
+    destination,
+    postedBy->{
+      _id,
+      userName,
+      image
+    },
+    save[]{
+      postedBy->{
+        _id,
+        userName,
+        image
+      },
+    },
+  }`;
+  return query;
+};
+
 export const categories = [
   {
     name: 'backend',
