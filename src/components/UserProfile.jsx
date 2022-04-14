@@ -22,7 +22,6 @@ const UserProfile = () => {
   const { userId } = useParams();
 
   const User = fetchUser();
-  console.log(User);
 
   useEffect(() => {
     const query = searchProfileByUserId(userId);
@@ -46,9 +45,7 @@ const UserProfile = () => {
             <img
               src="https://source.unsplash.com/1600x900/?nature,photography,technology"
               alt="banner-pic"
-              className="w-full h-370 2xl:h-510 shadow-2xl obje
-              setIconPortfolio();
-              console.log(setIconPortfolio());ct-cover "
+              className="w-full h-370 2xl:h-510 shadow-2xl"
             />
             <img
               className="rounded-full w-60 h-60 -mt-28 shadow-2xl object-cover border-4  border-accent"
@@ -108,10 +105,19 @@ const UserProfile = () => {
                 </label>
 
                 <div className="flex items-center hover:text-navColor hover:font-extrabold transition-all duration-500 ease-in-out">
-                  <span className="w-6">
+                  <span className="w-8">
                     <FaWhatsapp color="#FF4500" size={24} />
                   </span>
-                  <span className="ml-2">{user.phone}</span>
+                  <a
+                    href={`https://api.whatsapp.com/send?phone=55${user.phone.replace(
+                      /[^0-9]/g,
+                      ''
+                    )}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {user.phone}
+                  </a>
                 </div>
 
                 <div className="flex items-center hover:text-navColor hover:font-extrabold transition-all duration-500 ease-in-out">
