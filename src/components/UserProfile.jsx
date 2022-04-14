@@ -11,7 +11,6 @@ import { GoogleLogout } from 'react-google-login';
 
 import { searchProfileByUserId } from '../utils/data';
 import { client } from '../client';
-import Spinner from './Spinner';
 import { fetchUser } from '../utils/fetchUser';
 import brand from '../assets/images/icone-fcamara.png';
 import EmptyList from './EmptyList';
@@ -38,8 +37,6 @@ const UserProfile = () => {
 
     navigate('/login');
   };
-
-  // if (!user) return <Spinner message="Carregando perfil..." />;
 
   return (
     <div className="relative pb-2 h-full justify-center items-center">
