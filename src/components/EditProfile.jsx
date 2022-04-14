@@ -1,34 +1,39 @@
 import { useEffect, useState } from 'react';
-import { useForm, Controller, control } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import MaskedInput from 'react-input-mask';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useNavigate } from 'react-router-dom';
 
+import { client } from '../client';
 import { categories } from '../utils/data';
 
 const Profile = ({ user }) => {
   const [submitted, setSubmitted] = useState(false);
 
+  const navigate = useNavigate();
+
   const schema = yup.object().shape({
     about: yup
       .string()
-      .required('Campo obrigatório.')
-      .min(10, 'No mínimo 10 caracteres.'),
+      .required('Campo obrigatório')
+      .min(10, 'No mínimo 10 caracteres'),
     position: yup
       .string()
-      .required('Informe seu cargo.')
-      .min(3, 'No mínimo 3 caracteres.'),
-    expertise: yup.string().required('Selecione sua área de atuação.'),
-    phone: yup.string().required('Digite o seu telefone.'),
-    linkedIn: yup
-      .string()
-      .url('Informe um endereço web válido.')
-      .required('Informe o seu linkedIn.'),
+      .required('Informe seu cargo')
+      .min(3, 'No mínimo 3 caracteres'),
+    expertise: yup.string().required('Selecione sua área de atuação'),
+    phone: yup.string().required('Digite o seu telefone'),
     email: yup
       .string()
-      .required('Informe o seu E-mail principal.')
-      .email('Informe um e-mail válido.'),
-    githubPortfolio: yup.string().url('Informe um endereço web válido.'),
+      .required('Informe o seu E-mail principal')
+      .email('Informe um e-mail válido'),
+    linkedIn: yup
+      .string()
+      .url('Informe um endereço web válido')
+      .min(33, 'Confira o endereço do linkedIn')
+      .required('Informe o seu linkedIn'),
+    githubPortfolio: yup.string().url('Informe um endereço web válido'),
   });
 
   const {
@@ -50,7 +55,8 @@ const Profile = ({ user }) => {
     email,
     githubPortfolio,
   }) => {
-    const post = {
+    const newProfile = {
+      _type: 'profile',
       userId: user._id,
       about,
       position,
@@ -59,9 +65,17 @@ const Profile = ({ user }) => {
       linkedIn,
       email,
       githubPortfolio,
+      postedBy: {
+        _type: 'postedBy',
+        _ref: user._id,
+      },
     };
-    console.log(post);
+    console.log(newProfile);
+    client.create(newProfile).then(() => {
+      navigate('/');
+    });
   };
+
   return (
     <div className="flex flex-col justify-center items-center mt-5 lg:h-4/5 rounded-lg bg-navColor">
       <img
@@ -147,7 +161,6 @@ const Profile = ({ user }) => {
                 <MaskedInput
                   className="w-full rounded-lg bg-panel p-2 text-navColor outline-none focus:ring-4 focus:ring-orange-700"
                   mask="(99) 99999-9999"
-                  maskChar=""
                   placeholder="Digite o seu telefone"
                   value={field.value}
                   onChange={field.onChange}
@@ -181,6 +194,7 @@ const Profile = ({ user }) => {
             <input
               {...register('linkedIn', { required: true })}
               type="text"
+              defaultValue="https://www.linkedin.com/in/"
               error={errors.linkedIn}
               placeholder="Digite o link do seu Linked In"
               className="w-full rounded-lg bg-panel p-2 text-navColor outline-none focus:ring-4 focus:ring-orange-700"
