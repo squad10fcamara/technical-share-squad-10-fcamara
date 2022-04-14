@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import MaskedInput from 'react-input-mask';
 import * as yup from 'yup';
@@ -6,14 +6,15 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useNavigate } from 'react-router-dom';
 
 import { client } from '../client';
-import { categories } from '../utils/data';
+import { categories, searchProfileByUserId } from '../utils/data';
 
 const Profile = ({ user }) => {
   const [submitted, setSubmitted] = useState(false);
+  const [data, setData] = useState(null);
 
   const navigate = useNavigate();
 
-  const schema = yup.object().shape({
+  const form = yup.object().shape({
     about: yup
       .string()
       .required('Campo obrigatório')
@@ -41,9 +42,10 @@ const Profile = ({ user }) => {
     handleSubmit,
     reset,
     control,
+    setValue,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(form),
   });
 
   const onSubmit = ({
@@ -55,26 +57,63 @@ const Profile = ({ user }) => {
     email,
     githubPortfolio,
   }) => {
-    const newProfile = {
-      _type: 'profile',
-      userId: user._id,
-      about,
-      position,
-      expertise,
-      phone,
-      linkedIn,
-      email,
-      githubPortfolio,
-      postedBy: {
-        _type: 'postedBy',
-        _ref: user._id,
-      },
-    };
-    console.log(newProfile);
-    client.create(newProfile).then(() => {
+    if (!data) {
+      const newProfile = {
+        _type: 'profile',
+        userId: user._id,
+        about,
+        position,
+        expertise,
+        phone,
+        linkedIn,
+        email,
+        githubPortfolio,
+        postedBy: {
+          _type: 'postedBy',
+          _ref: user._id,
+        },
+      };
+
+      client.create(newProfile).then(() => {
+        navigate('/');
+      });
+    } else {
+      const editProfile = {
+        mutations: [
+          {
+            patch: {
+              id: data._id,
+              set: {
+                about,
+                position,
+                expertise,
+                phone,
+                linkedIn,
+                email,
+                githubPortfolio,
+              },
+            },
+          },
+        ],
+      };
+
+      client.patch(editProfile);
       navigate('/');
-    });
+    }
   };
+
+  async function searchProfile() {
+    const query = searchProfileByUserId(user._id);
+    await client.fetch(query).then((response) => {
+      const data = response[0];
+      setData(data);
+    });
+  }
+
+  useEffect(() => {
+    searchProfile();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="flex flex-col justify-center items-center mt-5 lg:h-4/5 rounded-lg bg-navColor">
@@ -96,8 +135,9 @@ const Profile = ({ user }) => {
           <textarea
             {...register('about', { required: true })}
             error={errors.about}
-            placeholder="Conte-nos sobre você..."
+            placeholder="Conte-nos sobre você e as ferramentas que utiliza..."
             rows={4}
+            defaultValue={data?.about}
             className="focus:ring- w-full rounded-lg bg-gray-200 p-4 text-navColor outline-none focus:ring-4 focus:ring-orange-700"
           />
           {errors.about && (
@@ -112,6 +152,7 @@ const Profile = ({ user }) => {
               type="text"
               error={errors.position}
               placeholder="Cargo atual"
+              defaultValue={data?.position}
               className="w-full rounded-lg bg-panel p-2 text-navColor outline-none focus:ring-4 focus:ring-orange-700"
             />
             {errors.position && (
@@ -127,6 +168,7 @@ const Profile = ({ user }) => {
               type="text"
               error={errors.expertise}
               placeholder="Área de atuação"
+              defaultValue={data?.expertise}
               className="w-full rounded-lg bg-panel p-2 text-navColor outline-none focus:ring-4 focus:ring-orange-700"
             >
               <option value="">Selecione sua área de atuação</option>
@@ -180,6 +222,7 @@ const Profile = ({ user }) => {
               type="text"
               error={errors.expertise}
               placeholder="Digite seu e-mail principal"
+              defaultValue={data?.email}
               className="w-full rounded-lg bg-panel p-2 text-navColor outline-none focus:ring-4 focus:ring-orange-700"
             />
             {errors.email && (
@@ -194,7 +237,7 @@ const Profile = ({ user }) => {
             <input
               {...register('linkedIn', { required: true })}
               type="text"
-              defaultValue="https://www.linkedin.com/in/"
+              defaultValue={data?.linkedIn}
               error={errors.linkedIn}
               placeholder="Digite o link do seu Linked In"
               className="w-full rounded-lg bg-panel p-2 text-navColor outline-none focus:ring-4 focus:ring-orange-700"
@@ -214,6 +257,7 @@ const Profile = ({ user }) => {
               type="text"
               error={errors.githubPortfolio}
               placeholder="Digite o link do seu Github / Portfólio"
+              defaultValue={data?.githubPortfolio}
               className="w-full rounded-lg bg-panel p-2 text-navColor outline-none focus:ring-4 focus:ring-orange-700"
             />
             {errors.githubPortfolio && (
