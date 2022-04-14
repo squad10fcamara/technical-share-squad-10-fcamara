@@ -9,9 +9,7 @@ export const searchQuery = (searchTerm) => {
     && position match '${searchTerm}*' 
     || expertise match '${searchTerm}*'
     || about match '${searchTerm}*'
-    || postedBy -> {
-          userName
-      } match '${searchTerm}*']
+    || userName match '${searchTerm}*']
     {
     _id,
     about,
