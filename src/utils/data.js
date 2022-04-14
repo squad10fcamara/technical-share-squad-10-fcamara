@@ -83,6 +83,32 @@ export const searchProfileByUserId = (userId) => {
   return query;
 };
 
+export const userSavedProfilesQuery = (userId) => {
+  const query = `*[_type == "profile" && '${userId}' in save[].userId ] | order(_createdAt desc) {
+    _id,     
+    about,
+    position,
+    expertise,
+    phone,
+    email,
+    linkedIn,
+    githubPortfolio,
+    postedBy->{
+      _id,
+      userName,
+      image
+    },
+    save[]{
+      postedBy->{
+        _id,
+        userName,
+        image
+      },
+    },
+  }`;
+  return query;
+};
+
 export const categories = [
   {
     name: 'backend',
