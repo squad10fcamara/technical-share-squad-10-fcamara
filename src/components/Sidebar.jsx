@@ -5,9 +5,9 @@ import { expertises } from '../utils/data';
 import logo from '../assets/images/logo.png';
 
 const isNotActiveStyle =
-  'flex items-center px-5 gap-3 text-black hover:text-navColor hover:font-extrabold transition-all duration-200 ease-in-out';
+  'flex justify-center gap-2 text-navColor hover:text-white bg-white hover:bg-navColor w-full border-2 border-navColor rounded-full py-1 transition-all duration-500 ease-in-out';
 const isActiveStyle =
-  'flex items-center px-7 py-1 gap-3 ml-2 font-extrabold text-navColor rounded-l-full bg-white border-accent transition-all duration-200 ease-in-out';
+  'flex justify-center gap-2 text-white bg-navColor w-full border-2 border-navColor rounded-full py-1 transition-all duration-500 ease-in-out';
 
 const Sidebar = ({ user, closeToggle }) => {
   const handleCloseSidebar = () => {
@@ -24,7 +24,7 @@ const Sidebar = ({ user, closeToggle }) => {
         >
           <img src={logo} alt="logo" className="w-275" />
         </Link>
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-2 mt-2 ml-2 mr-2">
           <NavLink
             to="/"
             className={({ isActive }) =>
@@ -35,20 +35,22 @@ const Sidebar = ({ user, closeToggle }) => {
             <AiOutlineTeam fontSize={25} />
             Encontre um mentor
           </NavLink>
-          <h3 className="text-black font-bold mt-2 px-5 text-base 2xl:text-xl text:font-extrabold text-grey-800">
+          <h3 className="text-navColor font-semibold mt-4 mb-4 mx-auto text-xl">
             Áreas de atuação:
           </h3>
           {expertises.slice(0, expertises.length).map((expertise) => (
-            <NavLink
-              to={`/expertise/${expertise.name}`}
-              className={({ isActive }) =>
-                isActive ? isActiveStyle : isNotActiveStyle
-              }
-              onClick={handleCloseSidebar}
-              key={expertise.name}
-            >
-              {expertise.value}
-            </NavLink>
+            <div className="ml-5 mr-5">
+              <NavLink
+                to={`/expertise/${expertise.name}`}
+                className={({ isActive }) =>
+                  isActive ? isActiveStyle : isNotActiveStyle
+                }
+                onClick={handleCloseSidebar}
+                key={expertise.name}
+              >
+                {expertise.value}
+              </NavLink>
+            </div>
           ))}
         </div>
       </div>

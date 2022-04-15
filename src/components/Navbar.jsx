@@ -8,7 +8,7 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
 
   return (
     <div className="flex gap-2 md:gap-5 w-full mt-5 pb-7">
-      <div className="flex justify-start items-center w-full px-2 rounded-full bg-gray-50 border-none outline-none focus-within:shadow-2xl">
+      <div className="flex justify-start items-center w-full px-2 rounded-full bg-gray-50 border-none outline-none focus-within:shadow-2xl ">
         <IoMdSearch fontSize={21} className="ml-1" />
         <input
           type="text"
