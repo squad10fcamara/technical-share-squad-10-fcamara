@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import MaskedInput from 'react-input-mask';
 import * as yup from 'yup';
@@ -6,7 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useNavigate } from 'react-router-dom';
 
 import { client } from '../client';
-import { categories, searchProfileByUserId } from '../utils/data';
+import { expertises, searchProfileByUserId } from '../utils/data';
 
 const Profile = ({ user }) => {
   const [submitted, setSubmitted] = useState(false);
@@ -116,13 +116,13 @@ const Profile = ({ user }) => {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center items-center mt-5 lg:h-4/5 rounded-lg bg-navColor">
+    <div className="flex flex-col justify-center items-center mt-5 mb-10 lg:h-4/5 rounded-lg bg-gray-200 shadow-2xl">
       <img
         className="rounded-full w-48 h-48 mt-5 mx-auto border-4  border-accent"
         src={user.image}
         alt={user.username}
       />
-      <p className="mt-3 text-xl mx-auto md:text-2xl text-white p-4">
+      <p className="mt-3 text-xl mx-auto md:text-2xl text-black p-4 font-semibold">
         {user.userName}
       </p>
 
@@ -131,14 +131,14 @@ const Profile = ({ user }) => {
         className="mb-8 w-full rounded-lg p-8 pb-12 "
       >
         <div className="mb-4 grid grid-cols-1 gap-4">
-          <label className="text-white">Sobre</label>
+          <label className="text-black font-semibold">Sobre</label>
           <textarea
             {...register('about', { required: true })}
             error={errors.about}
             placeholder="Conte-nos sobre você e as ferramentas que utiliza..."
             rows={4}
             defaultValue={data?.about}
-            className="focus:ring- w-full rounded-lg bg-gray-200 p-4 text-navColor outline-none focus:ring-4 focus:ring-orange-700"
+            className="focus:ring- w-full rounded-lg bg-gray-50 p-4 shadow-xl text-navColor outline-none focus:ring-2 focus:ring-orange-700"
           />
           {errors.about && (
             <span className="text-red-500">{errors.about.message}</span>
@@ -146,14 +146,14 @@ const Profile = ({ user }) => {
         </div>
         <div className="mb-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
           <div className="flex flex-col">
-            <label className="text-white mb-2">Cargo</label>
+            <label className="text-black mb-2 font-semibold">Cargo</label>
             <input
               {...register('position', { required: true })}
               type="text"
               error={errors.position}
               placeholder="Cargo atual"
               defaultValue={data?.position}
-              className="w-full rounded-lg bg-panel p-2 text-navColor outline-none focus:ring-4 focus:ring-orange-700"
+              className="w-full rounded-lg shadow-xl bg-panel p-2 text-navColor outline-none focus:ring-2 focus:ring-orange-700"
             />
             {errors.position && (
               <span className="mt-2 text-red-500">
@@ -162,20 +162,22 @@ const Profile = ({ user }) => {
             )}
           </div>
           <div className="flex flex-col">
-            <label className="text-white mb-2">Área de atuação</label>
+            <label className="text-black mb-2 font-semibold">
+              Área de atuação
+            </label>
             <select
               {...register('expertise', { required: true })}
               type="text"
               error={errors.expertise}
               placeholder="Área de atuação"
               defaultValue={data?.expertise}
-              className="w-full rounded-lg bg-panel p-2 text-navColor outline-none focus:ring-4 focus:ring-orange-700"
+              className="w-full rounded-lg shadow-xl bg-gray-50 p-2 text-navColor outline-none focus:ring-2 focus:ring-orange-700"
             >
               <option value="">Selecione sua área de atuação</option>
-              {categories.map((category) => {
+              {expertises.map((expertise) => {
                 return (
-                  <option key={category.name} value={category.name}>
-                    {category.value}
+                  <option key={expertise.name} value={expertise.name}>
+                    {expertise.value}
                   </option>
                 );
               })}
@@ -192,7 +194,7 @@ const Profile = ({ user }) => {
 
         <div className="mt-10 mb-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
           <div className="flex flex-col">
-            <label className="text-white mb-2">Telefone</label>
+            <label className="text-black mb-2 font-semibold">Telefone</label>
             <Controller
               name="phone"
               control={control}
@@ -201,7 +203,7 @@ const Profile = ({ user }) => {
               }}
               render={({ field }) => (
                 <MaskedInput
-                  className="w-full rounded-lg bg-panel p-2 text-navColor outline-none focus:ring-4 focus:ring-orange-700"
+                  className="w-full rounded-lg bg-panel shadow-xl p-2 text-navColor outline-none focus:ring-2 focus:ring-orange-700"
                   mask="(99) 99999-9999"
                   placeholder="Digite o seu telefone"
                   value={field.value}
@@ -216,14 +218,14 @@ const Profile = ({ user }) => {
             )}
           </div>
           <div className="flex flex-col">
-            <label className="text-white mb-2">E-mail</label>
+            <label className="text-black mb-2 font-semibold">E-mail</label>
             <input
               {...register('email', { required: true })}
               type="text"
               error={errors.expertise}
               placeholder="Digite seu e-mail principal"
               defaultValue={data?.email}
-              className="w-full rounded-lg bg-panel p-2 text-navColor outline-none focus:ring-4 focus:ring-orange-700"
+              className="w-full rounded-lg bg-panel p-2 shadow-xl text-navColor outline-none focus:ring-2 focus:ring-orange-700"
             />
             {errors.email && (
               <span className="mt-2 text-red-500">{errors.email.message}</span>
@@ -233,14 +235,14 @@ const Profile = ({ user }) => {
 
         <div className="mb-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
           <div className="flex flex-col">
-            <label className="text-white mb-2">Linked In</label>
+            <label className="text-black mb-2 font-semibold">Linked In</label>
             <input
               {...register('linkedIn', { required: true })}
               type="text"
               defaultValue={data?.linkedIn}
               error={errors.linkedIn}
               placeholder="Digite o link do seu Linked In"
-              className="w-full rounded-lg bg-panel p-2 text-navColor outline-none focus:ring-4 focus:ring-orange-700"
+              className="w-full rounded-lg bg-panel p-2 shadow-xl text-navColor outline-none focus:ring-2 focus:ring-orange-700"
             />
             {errors.linkedIn && (
               <span className="mt-2 text-red-500">
@@ -249,7 +251,9 @@ const Profile = ({ user }) => {
             )}
           </div>
           <div className="flex flex-col">
-            <label className="text-white mb-2">Github / Portfólio</label>
+            <label className="text-black mb-2 font-semibold">
+              Github / Portfólio
+            </label>
             <input
               {...register('githubPortfolio', {
                 required: false,
@@ -258,7 +262,7 @@ const Profile = ({ user }) => {
               error={errors.githubPortfolio}
               placeholder="Digite o link do seu Github / Portfólio"
               defaultValue={data?.githubPortfolio}
-              className="w-full rounded-lg bg-panel p-2 text-navColor outline-none focus:ring-4 focus:ring-orange-700"
+              className="w-full rounded-lg bg-panel shadow-xl p-2 text-navColor outline-none focus:ring-2 focus:ring-orange-700"
             />
             {errors.githubPortfolio && (
               <span className="mt-2 text-red-500">
@@ -272,7 +276,7 @@ const Profile = ({ user }) => {
           <input
             type="submit"
             value="Salvar"
-            className="ease inline-block cursor-pointer rounded-full bg-accent px-24 py-3 text-lg font-medium text-white transition duration-500 hover:bg-opacity-70"
+            className="ease inline-block cursor-pointer rounded-full bg-accent px-24 py-3 text-lg font-medium text-white transition duration-500 hover:bg-opacity-75"
           />
         </div>
       </form>

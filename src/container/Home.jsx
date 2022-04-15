@@ -8,7 +8,7 @@ import Content from './Content';
 import { client } from '../client';
 import { userQuery } from '../utils/data';
 import { fetchUser } from '../utils/fetchUser';
-import logo from '../assets/images/fcamara-orange.png';
+import logo from '../assets/images/logo.png';
 
 const Home = () => {
   const [toggleSidebar, setToggleSidebar] = useState(false);
@@ -30,20 +30,20 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="flex bg-gray-200 md:flex-row flex-col h-screen transaction-height duration-75 ease-out">
+    <div className="flex bg-gray-300 md:flex-row flex-col h-screen transaction-height duration-75 ease-out">
       <div className="hidden md:flex h-screen flex-initial">
         <Sidebar user={user && user} />
       </div>
 
       <div className="flex md:hidden flex-row">
-        <div className="p-2 w-full flex flex-row bg-accent justify-between items-center shadow-md">
+        <div className="p-2 w-full flex flex-row bg-gray-200 justify-between items-center shadow-md">
           <HiMenu
             fontSize={40}
             className="cursor-pointer"
             onClick={() => setToggleSidebar(true)}
           />
           <Link to="/">
-            <img src={logo} alt="logo" className="w-36" />
+            <img src={logo} alt="logo" className="w-48" />
           </Link>
           <Link to={`user-profile/${user?._id}`}>
             <img src={user?.image} alt="avatar" className="w-20 rounded-full" />
@@ -51,7 +51,7 @@ const Home = () => {
         </div>
         {toggleSidebar && (
           <div
-            className="fixed w-4/5 bg-accent h-screen overflow-y-auto shadow-md z-10 animate-slide-in"
+            className="fixed w-4/5 bg-gray-200 h-screen overflow-y-auto shadow-md z-10 animate-slide-in"
             onClick={() => setToggleSidebar(false)}
           >
             <div className="absolute w-full flex justify-end items-center p-2">
