@@ -21,7 +21,8 @@ Observações:
 
 1 - Realizar clone do projeto 
 1.a - Executar comando  + link do repositório 
-git clone https://github.com/squad10fcamara/technical-share-squad-10-fcamara.git
+
+  > git clone https://github.com/squad10fcamara/technical-share-squad-10-fcamara.git
 
 1.b - Após a criação do projeto o arquivo package-lock.json ficara disponível contendo todas as dependências necessárias para que a aplicação funcione localmente. 
 
@@ -65,7 +66,9 @@ git clone https://github.com/squad10fcamara/technical-share-squad-10-fcamara.git
 
 2 – Entrar na pasta do projeto technical-share-squad-10-fcamara através do terminal 
 
-2.a – Executar o comando: npm install
+2.a – Executar o comando: 
+
+ > npm install
 
 2.b – As dependências descritas na sessão 1.b serão instalados. 
 
