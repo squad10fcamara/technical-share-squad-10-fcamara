@@ -17,7 +17,7 @@ Esta aplicação ficará disponível online, onde você poderá testar suas func
 
 *Observação:*
 
-Esta aplicação utiliza chaves proprietárias e conteúdo sensível, que não permite ser compartilhado por motivos de sigilos de dados. Caso escolha realizar o clone do projeto para ser rodado localmente, seguir passos do documento descritos na sessão "Como rodar a aplicação localmente".
+Esta aplicação utiliza chaves proprietárias e conteúdo sensível, que não permite ser compartilhado por motivos de sigilo de dados. Caso opte por realizar o clone do projeto para ser rodado localmente, seguir passos do documento descritos na sessão "Como rodar a aplicação localmente".
 
   <h1> 🤝 Colaboradores - @squad10 </h1>
 
