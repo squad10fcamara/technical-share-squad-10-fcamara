@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'body': ['"Montserrat"'],
+        body: ['"Montserrat"'],
       },
       fontSize: {
         '64xl': '64px',
@@ -24,7 +24,6 @@ module.exports = {
         508: '508px',
         824: '824px',
         488: '488px',
-
       },
       height: {
         80: '80px',
@@ -54,19 +53,22 @@ module.exports = {
         lightGray: '#F1EFEE',
         primary: '#FAFAFA',
         secColor: '#efefef',
-        navColor: '#36357E',
+        navColor: '#5251a2',
         accent: '#FF4500',
       },
       backgroundColor: {
         mainColor: '#FBF8F9',
-        navColor: '#36357E',
+        navColor: '#5251a2',
+        navColorLight: '#dedeed',
         accent: '#FF4500',
         blackOverlay: 'rgba(0, 0 ,0 ,0.7)',
       },
       borderColor: {
         accent: '#FF4500',
+        navColor: '#5251a2',
+        navColorLight: '#dedeed',
       },
-      
+
       keyframes: {
         'slide-in': {
           '0%': {
@@ -104,10 +106,10 @@ module.exports = {
       pointer: 'pointer',
     },
   },
-  
+
   variants: {
     // backgroundColor: ['active'],
     extend: {},
-    },
+  },
   plugins: [],
 };
