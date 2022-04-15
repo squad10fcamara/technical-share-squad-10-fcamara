@@ -1,32 +1,35 @@
 
-|  | Orange Share  |  |
-|----------|----------|----------|
-| Mentoria | ![image](https://user-images.githubusercontent.com/78885070/163495244-84f5c07e-c866-43f3-a3e9-04bb9961965b.png) | mentorados |
+<img src="https://i.imgur.com/z93qQ0b.png" alt="logo Orange Share"> 
 
 
 <h2>Sobre a aplicação</h2>
 
-Esta aplicação ficará disponivél online onde você poderá testar suas funcionalidades hands-on
 
-  Uma plataforma que promove o primeiro contato entre o quadro de funcionários da área de tecnologia da empresa FCamara, de modo a fomentar a aproximação de profissionais de diferentes níveis de atuação e níveis de experiências para a realização de um bate-papo ou de uma mentoria mais complexa.
+O Orange Share é uma plataforma que promove o primeiro contato entre o quadro de funcionários da empresa FCamara, de modo a fomentar a aproximação de profissionais de diferentes níveis de atuação e níveis de experiências para a realização de um bate-papo ou de uma mentoria mais complexa.
+
+Precisando tirar alguma dúvida rápida? Quer bater um papo sobre determinada linguagem ou até mesmo falar sobre desenvolvimento de carreira? Seu lugar é aqui! 
 
 
+Esta aplicação ficará disponível online, onde você poderá testar suas funcionalidades hands-on.
+
+*<h4>Clique aqui e veja o Deploy da aplicação </h4>*
 
 
-Observações: 
-1-	Esta aplicação ficará disponível online onde você poderá testar suas funcionalidades hands-on;
-2-	Esta aplicação utiliza chaves proprietárias e conteúdo sensível que não permite ser compartilhado por motivos de sigilos de dados. Caso escolha realizar o clone do projeto para ser rodado localmente seguir passos do documento descritos na sessão Como rodar a aplicação localmente x,x,x criação de chave google x,x,x, configurar back-end utilizando Sanity.io  x,x,x
+*Observação:*
+
+Esta aplicação utiliza chaves proprietárias e conteúdo sensível, que não permite ser compartilhado por motivos de sigilos de dados. Caso escolha realizar o clone do projeto para ser rodado localmente, seguir passos do documento descritos na sessão "Como rodar a aplicação localmente".
 
 <h2>Como rodar a aplicação localmente</h2>
 
-1 - Realizar clone do projeto 
+1º - Realizar clone do projeto 
+
 1.a - Executar comando  + link do repositório 
 
   > git clone https://github.com/squad10fcamara/technical-share-squad-10-fcamara.git
 
-1.b - Após a criação do projeto o arquivo package-lock.json ficara disponível contendo todas as dependências necessárias para que a aplicação funcione localmente. 
+1.b - Após o clone do projeto, o arquivo package-lock.json ficara disponível contendo todas as dependências necessárias para que a aplicação funcione localmente, porém caso necessário, segue especificações de versões. 
 
-"@hookform/resolvers": "^2.8.8",
+        "@hookform/resolvers": "^2.8.8",
 
         "@sanity/client": "^3.1.0",
         
@@ -64,15 +67,15 @@ Observações:
         
         "yup": "^0.32.11"
 
-2 – Entrar na pasta do projeto technical-share-squad-10-fcamara através do terminal 
+2º – Entrar na pasta do projeto technical-share-squad-10-fcamara através do terminal 
 
 2.a – Executar o comando: 
 
  > npm install
 
-2.b – As dependências descritas na sessão 1.b serão instalados. 
+2.b – As dependências descritas na sessão 1.b serão instaladas. 
 
-2.c – A partir deste ponto a estrutura da aplicação ficara disponível para ser rodada localmente sendo apresentado apenas a estrutura de páginas e seus componentes, telas de login, tela principal da aplicação, sidebars e itens afins mas não terá a captura de login de usuário de autenticação google e a disposição de dados do perfil de usuário presentes na aplicação online, caso escolha testar a aplicação utilizando autenticação google e o uso do sanity.io para backend seguir para sessão Configurando Chave para login google e Sanity. 
+2.c – À partir deste ponto, a estrutura da aplicação ficará disponível para ser rodada localmente, sendo apresentado apenas a estrutura de páginas e seus componentes, telas de login, tela principal da aplicação, sidebars e itens afins, mas não terá a captura de login de usuário de autenticação google e a disposição de dados do perfil de usuário presentes na aplicação online, caso escolha testar a aplicação utilizando autenticação google e o uso do sanity.io para backend, seguir para sessão *"Configurando Chave para login google e Sanity"*. 
 
 2.d - Executar comando para iniciar aplicação: npm run dev
 
@@ -162,15 +165,14 @@ Feito isso vai aparecer um Pop up com as credenciais que precisamos:
     - Sua chave secreta de cliente 
     
 ps. Essas 2 informações são sensiveis, copie elas e salve em um arquivo a parte. 
-ps do ps. A chave secreta do cliente não é mostrada novamente, caso não a salve vai ter que reptir o procedimento.
+ps do ps. A chave secreta do cliente não é mostrada novamente, caso não a salve, terá que reptir o procedimento.
 
 Google Cloud Platform
 
-Google Cloud Platform lets you build, deploy, and scale applications, websites, and services on the same infrastructure as Google.
+"Google Cloud Platform lets you build, deploy, and scale applications, websites, and services on the same infrastructure as Google."
 
 
-
-<h2>Configurando Sanity e rodando localmente no projeto</h2>
+Configurando Sanity e rodando localmente no projeto
 
 4 - Link para suporte
 
@@ -187,5 +189,60 @@ npm install --global @sanity/cli && sanity init
 
  > Sanity start 
 
+<h4> Ficou com alguma dúvida? Estamos disponíveis no nosso WhatsApp de suporte (+55 19 98180-4287)
 
+  <h1> 🤝 Colaboradores </h1>
 
+<h2> Developers </h2>
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="#">
+        <img src="https://i.imgur.com/NJr70Hs.jpg" width="100px;" alt="Foto do David Pires"/><br>
+        <sub>
+          <b>David Pires</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://i.imgur.com/mR29dW0.jpg" width="100px;" alt="Foto do João G Paula"/><br>
+        <sub>
+          <b>João G. Paula</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://i.imgur.com/zGdiTjE.jpg" width="100px;" alt="Foto do Walter Souza"/><br>
+        <sub>
+          <b>Walter Souza</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
+  
+  <h2> UX/UI </h2>
+
+  <table>
+  <tr>
+    <td align="center">
+      <a href="#">
+        <img src="https://i.imgur.com/JojZAHW.jpg" width="100px;" alt="Foto da Flávia Moreira"/><br>
+        <sub>
+          <b>Flávia Moreira</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://i.imgur.com/kFaDBzs.jpg" width="100px;" alt="Foto da Sthefany Vargas"/><br>
+        <sub>
+          <b>Sthefany Vargas</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
