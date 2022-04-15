@@ -83,6 +83,69 @@ export const searchProfileByUserId = (userId) => {
   return query;
 };
 
+export const profileDetailQuery = (profileId) => {
+  const query = `*[_type == "profile" && _id == '${profileId}']{    
+    _id,
+    about,
+    position,
+    expertise,
+    phone,
+    email,
+    linkedIn,
+    githubPortfolio,
+    postedBy->{
+      _id,
+      userName,
+      image
+    },
+   save[]{
+      postedBy->{
+        _id,
+        userName,
+        image
+      },
+    },
+    feedbacks[]{
+      feedback,
+      _key,
+      postedBy->{
+        _id,
+        userName,
+        image
+      },
+    }
+  }`;
+  return query;
+};
+
+export const profileDetailMoreProfileQuery = (profile) => {
+  const query = `*[_type == "profile" && expertise == '${profile.expertise}' && _id != '${profile._id}' ]{
+    _id,
+    about,
+    position,
+    expertise,
+    phone,
+    email,
+    linkedIn,
+    githubPortfolio,
+    destination,
+    postedBy->{
+      _id,
+      userName,
+      image
+    },
+    save[]{
+      _key,
+      postedBy->{
+        _id,
+        userName,
+        image
+      },
+    },
+  }`;
+  return query;
+};
+
 export const userSavedProfilesQuery = (userId) => {
   const query = `*[_type == "profile" && '${userId}' in save[].userId ] | order(_createdAt desc) {
     _id,     
