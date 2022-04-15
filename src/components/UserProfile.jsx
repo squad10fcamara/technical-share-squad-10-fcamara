@@ -9,7 +9,7 @@ import {
 import { useParams, useNavigate } from 'react-router-dom';
 import { GoogleLogout } from 'react-google-login';
 
-import { searchProfileByUserId } from '../utils/data';
+import { searchProfileByUserId, getValueFromExpertises } from '../utils/data';
 import { client } from '../client';
 import { fetchUser } from '../utils/fetchUser';
 import brand from '../assets/images/icone-fcamara.png';
@@ -91,7 +91,7 @@ const UserProfile = () => {
             </div>
 
             <div className="mt-3 capitalize text-accent text-xl font-semibold">
-              <span>{user.expertise}</span>
+              <span>{getValueFromExpertises(user.expertise)}</span>
             </div>
             <div className="mt-5 w-full rounded-lg p-8 pb-12 bg-gray-300">
               <div className="mb-4 grid grid-cols-1 gap-4 bg-gray-50 p-5 rounded-lg shadow-lg">

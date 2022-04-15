@@ -14,6 +14,7 @@ import { client } from '../client';
 import {
   profileDetailQuery,
   profileDetailMoreProfileQuery,
+  getValueFromExpertises,
 } from '../utils/data';
 import Spinner from './Spinner';
 import Mailto from './Mailto';
@@ -90,7 +91,7 @@ const ProfileDetail = ({ user }) => {
               {profileDetail.postedBy.userName}
             </h1>
             <p className="mt-3 capitalize text-accent text-xl font-semibold">
-              {profileDetail.expertise}
+              {getValueFromExpertises(profileDetail.expertise)}
             </p>
             <div className="flex items-center mt-3">
               <img
@@ -108,7 +109,11 @@ const ProfileDetail = ({ user }) => {
                 subject="Orange Share"
                 body="Olá, tudo bem?"
               >
-                <FaEnvelope color="#FF4500" size={30} />
+                <FaEnvelope
+                  size={30}
+                  color="#FF4500"
+                  className="hover:opacity-75 transition-all duration-500 ease-in-out"
+                />
               </Mailto>
               <a
                 href={`https://api.whatsapp.com/send?phone=55${profileDetail.phone.replace(
@@ -118,10 +123,18 @@ const ProfileDetail = ({ user }) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <FaWhatsapp color="#FF4500" size={30} />
+                <FaWhatsapp
+                  color="#FF4500"
+                  size={30}
+                  className="hover:opacity-75 transition-all duration-500 ease-in-out"
+                />
               </a>
               <a href={profileDetail.linkedIn} target="_blank" rel="noreferrer">
-                <FaLinkedinIn color="#FF4500" size={30} />
+                <FaLinkedinIn
+                  color="#FF4500"
+                  size={30}
+                  className="hover:opacity-75 transition-all duration-500 ease-in-out"
+                />
               </a>
               {profileDetail.githubPortfolio !== '' && (
                 <a
@@ -129,11 +142,15 @@ const ProfileDetail = ({ user }) => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <FaGlobeAmericas color="#FF4500" size={30} />
+                  <FaGlobeAmericas
+                    color="#FF4500"
+                    size={30}
+                    className="hover:opacity-75 transition-all duration-500 ease-in-out"
+                  />
                 </a>
               )}
             </div>
-            <div className="mt-7 p-5 border-2 border-navColor rounded-lg">
+            <div className="mt-7 p-5 border-2 border-accent rounded-lg">
               <span className="font-semibold text-xl">Sobre</span>
               <p className="mt-3">{profileDetail.about}</p>
             </div>
@@ -145,7 +162,7 @@ const ProfileDetail = ({ user }) => {
                 <Link to={`/user-profile/${user._id}`}>
                   <img
                     src={user.image}
-                    className="w-10 h-10 rounded-full cursor-pointer"
+                    className="w-10 h-10 rounded-full cursor-pointer hover:border-2 hover:border-accent transition-all duration-500 ease-in-out"
                     alt="user-profile"
                   />
                 </Link>
@@ -162,7 +179,7 @@ const ProfileDetail = ({ user }) => {
             <div className="flex justify-center">
               <button
                 type="button"
-                className="bg-accent text-white mt-3 rounded-full px-24 py-2 font-semibold outline-none hover:opacity-75"
+                className="bg-accent text-white mt-3 rounded-full px-24 py-2 font-semibold outline-none hover:opacity-75 transition-all duration-500 ease-in-out"
                 onClick={addFeedback}
               >
                 {addingFeedback ? 'Enviando...' : 'Enviar'}
@@ -183,7 +200,7 @@ const ProfileDetail = ({ user }) => {
                 >
                   <img
                     src={item.postedBy?.image}
-                    className="w-10 h-10 rounded-full cursor-pointer"
+                    className="w-10 h-10 rounded-full"
                     alt="user-profile"
                   />
                   <div className="flex flex-col">

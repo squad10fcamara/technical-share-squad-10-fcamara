@@ -232,3 +232,8 @@ export const expertises = [
     image: 'https://ibb.co/hdTx392',
   },
 ];
+
+export function getValueFromExpertises(name) {
+  let expertise = expertises.find((item) => item.name === name);
+  return expertise.value;
+}

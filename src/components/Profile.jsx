@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { getValueFromExpertises } from '../utils/data';
 
 const Profile = ({ profile: { postedBy, _id, position, expertise } }) => {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ const Profile = ({ profile: { postedBy, _id, position, expertise } }) => {
             {position}
           </p>
           <p className="mt-3 mb-2 text-sm mx-auto text-white px-4 py-2 rounded-full bg-accent capitalize shadow-2xl">
-            {expertise}
+            {getValueFromExpertises(expertise)}
           </p>
         </div>
       </div>

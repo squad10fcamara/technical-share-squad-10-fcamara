@@ -29,9 +29,9 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
         </Link>
         <Link
           to="edit-profile"
-          className="bg-accent text-white rounded-full w-12 h-12 md:w-14 md:h-12 flex justify-center items-center hover:opacity-75 transition-all duration-500 "
+          className="bg-accent text-white rounded-full w-12 h-12 md:w-14 md:h-12 flex justify-center items-center hover:opacity-75 transition-all duration-500 shadow-2xl hover:shadow-orange-500"
         >
-          <IoMdCreate />
+          <IoMdCreate fontSize={25} />
         </Link>
       </div>
     </div>
