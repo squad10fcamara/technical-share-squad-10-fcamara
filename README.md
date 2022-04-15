@@ -185,7 +185,7 @@ npm install --global @sanity/cli && sanity init
 
 4.b - Após instalação local do sanity executar comando para iniciar servidor
 
-Sanity start 
+ > Sanity start 
 
 
 
