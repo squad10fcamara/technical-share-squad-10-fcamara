@@ -89,6 +89,7 @@ const UserProfile = () => {
                 {user.position}
               </span>
             </div>
+
             <div className="mt-3 capitalize text-accent text-xl font-semibold">
               <span>{user.expertise}</span>
             </div>
@@ -120,7 +121,7 @@ const UserProfile = () => {
                   </a>
                 </div>
 
-                <div className="flex items-center hover:text-navColor hover:font-extrabold transition-all duration-500 ease-in-out">
+                <div className="flex items-center">
                   <span className="w-6">
                     <FaEnvelope color="#FF4500" size={24} />
                   </span>
