@@ -4,12 +4,12 @@ const Profile = ({ profile: { postedBy, _id, position, expertise } }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="m-2 mb-4 border-2 border-navColor rounded-lg shadow-2xl">
+    <div className="m-2 mb-4 border-2 border-navColor rounded-lg shadow-2xl hover:border-accent transition-all duration-500 ease-in-out hover:shadow-orange-500">
       <div
         onClick={() => navigate(`/profile-detail/${_id}`)}
-        className="relative cursor-pointer w-auto hover:shadow-lg rounded-lg overflow-hidden transition-all duration-500 ease-in-out"
+        className="relative cursor-pointer w-auto hover:shadow-lg rounded-lg overflow-hidden"
       >
-        <div className="flex flex-col rounded-lg w-full h-420 bg-gray-100  ">
+        <div className="flex flex-col rounded-lg w-full h-420 bg-gray-100">
           <img
             className="rounded-full text-center items-center w-48 h-48 mt-5 mx-auto border-4  border-accent"
             src={postedBy.image}

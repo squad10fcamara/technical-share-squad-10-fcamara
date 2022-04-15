@@ -65,7 +65,6 @@ const ProfileDetail = ({ user }) => {
           fetchProfileDetails();
           setFeedback('');
           setAddingFeedback(false);
-          window.location.reload();
         });
     }
   };
