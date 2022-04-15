@@ -9,7 +9,9 @@ export const searchQuery = (searchTerm) => {
     && position match '${searchTerm}*' 
     || expertise match '${searchTerm}*'
     || about match '${searchTerm}*'
+
     ]
+
     {
     _id,
     about,
@@ -133,6 +135,7 @@ export const userCreatedProfileQuery = (userId) => {
 };
 
 export const expertises = [
+
   {
     name: 'backend',
     value: 'Back-End',

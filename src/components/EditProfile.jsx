@@ -1,4 +1,7 @@
+
 import { useEffect, useState } from 'react';
+
+
 import { useForm, Controller } from 'react-hook-form';
 import MaskedInput from 'react-input-mask';
 import * as yup from 'yup';
@@ -6,7 +9,10 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useNavigate } from 'react-router-dom';
 
 import { client } from '../client';
+
 import { expertises, searchProfileByUserId } from '../utils/data';
+
+
 
 const Profile = ({ user }) => {
   const [submitted, setSubmitted] = useState(false);
@@ -138,7 +144,9 @@ const Profile = ({ user }) => {
             placeholder="Conte-nos sobre você e as ferramentas que utiliza..."
             rows={4}
             defaultValue={data?.about}
+
             className="focus:ring- w-full rounded-lg bg-gray-50 p-4 shadow-xl text-navColor outline-none focus:ring-2 focus:ring-orange-700"
+
           />
           {errors.about && (
             <span className="text-red-500">{errors.about.message}</span>
@@ -153,7 +161,10 @@ const Profile = ({ user }) => {
               error={errors.position}
               placeholder="Cargo atual"
               defaultValue={data?.position}
+
               className="w-full rounded-lg shadow-xl bg-panel p-2 text-navColor outline-none focus:ring-2 focus:ring-orange-700"
+
+
             />
             {errors.position && (
               <span className="mt-2 text-red-500">
@@ -171,7 +182,10 @@ const Profile = ({ user }) => {
               error={errors.expertise}
               placeholder="Área de atuação"
               defaultValue={data?.expertise}
+
               className="w-full rounded-lg shadow-xl bg-gray-50 p-2 text-navColor outline-none focus:ring-2 focus:ring-orange-700"
+
+
             >
               <option value="">Selecione sua área de atuação</option>
               {expertises.map((expertise) => {
@@ -225,7 +239,9 @@ const Profile = ({ user }) => {
               error={errors.expertise}
               placeholder="Digite seu e-mail principal"
               defaultValue={data?.email}
+
               className="w-full rounded-lg bg-panel p-2 shadow-xl text-navColor outline-none focus:ring-2 focus:ring-orange-700"
+
             />
             {errors.email && (
               <span className="mt-2 text-red-500">{errors.email.message}</span>
@@ -262,7 +278,9 @@ const Profile = ({ user }) => {
               error={errors.githubPortfolio}
               placeholder="Digite o link do seu Github / Portfólio"
               defaultValue={data?.githubPortfolio}
+
               className="w-full rounded-lg bg-panel shadow-xl p-2 text-navColor outline-none focus:ring-2 focus:ring-orange-700"
+
             />
             {errors.githubPortfolio && (
               <span className="mt-2 text-red-500">

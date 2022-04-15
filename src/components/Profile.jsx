@@ -1,8 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 
+
 const Profile = ({ profile: { postedBy, _id, position, expertise } }) => {
+
   const navigate = useNavigate();
 
+ 
   return (
     <div className="m-2 mb-4 border-2 border-navColor rounded-lg shadow-2xl">
       <div
@@ -21,9 +24,12 @@ const Profile = ({ profile: { postedBy, _id, position, expertise } }) => {
           <p className="mt-2 mb-1 text-sm mx-auto text-navColor px-4 py-2 rounded-full shadow-2xl bg-navColorLight font-semibold">
             {position}
           </p>
+
           <p className="mt-3 mb-2 text-sm mx-auto text-white px-4 py-2 rounded-full bg-accent capitalize shadow-2xl">
+
             {expertise}
           </p>
+
         </div>
       </div>
     </div>
