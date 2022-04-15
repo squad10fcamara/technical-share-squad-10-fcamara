@@ -14,7 +14,7 @@ const Content = ({ user }) => {
 
   return (
     <div className="px-2 md:px-5">
-      <div className="bg-gray-200">
+      <div className="bg-gray-300">
         <Navbar
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
@@ -24,7 +24,7 @@ const Content = ({ user }) => {
       <div className="h-full">
         <Routes>
           <Route path="/" element={<Feed />} />
-          <Route path="/category/:categoryId" element={<Feed />} />
+          <Route path="/expertise/:expertiseId" element={<Feed />} />
           <Route
             path="/profile-detail/:profileId"
             element={<ProfileDetail user={user} />}

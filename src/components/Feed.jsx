@@ -11,13 +11,13 @@ const Feed = () => {
   const [loading, setLoading] = useState(false);
   const [profiles, setProfiles] = useState(null);
 
-  const { categoryId } = useParams();
+  const { expertiseId } = useParams();
 
   useEffect(() => {
     setLoading(true);
 
-    if (categoryId) {
-      const query = searchQuery(categoryId);
+    if (expertiseId) {
+      const query = searchQuery(expertiseId);
       client.fetch(query).then((data) => {
         setProfiles(data);
         setLoading(false);
@@ -28,9 +28,7 @@ const Feed = () => {
         setLoading(false);
       });
     }
-  }, [categoryId]);
-
-  console.log(profiles);
+  }, [expertiseId]);
 
   if (loading) return <Spinner message="Procurando membros" />;
 
