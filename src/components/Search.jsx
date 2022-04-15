@@ -37,4 +37,6 @@ const Search = ({ searchTerm }) => {
   );
 };
 
+
 export default Search;
+

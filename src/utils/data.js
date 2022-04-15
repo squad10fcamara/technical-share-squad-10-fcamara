@@ -9,7 +9,9 @@ export const searchQuery = (searchTerm) => {
     && position match '${searchTerm}*' 
     || expertise match '${searchTerm}*'
     || about match '${searchTerm}*'
+
     ]
+
     {
     _id,
     about,
@@ -196,6 +198,7 @@ export const userCreatedProfileQuery = (userId) => {
 };
 
 export const expertises = [
+
   {
     name: 'backend',
     value: 'Back-End',
@@ -231,9 +234,10 @@ export const expertises = [
     value: 'Gestão & Administração',
     image: 'https://ibb.co/hdTx392',
   },
-];
+
 
 export function getValueFromExpertises(name) {
   let expertise = expertises.find((item) => item.name === name);
   return expertise.value;
 }
+
