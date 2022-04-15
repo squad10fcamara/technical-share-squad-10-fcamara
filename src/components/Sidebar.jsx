@@ -5,7 +5,7 @@ import { expertises } from '../utils/data';
 import logo from '../assets/images/logo.png';
 
 const isNotActiveStyle =
-  'flex justify-center gap-2 text-navColor hover:text-white bg-white hover:bg-navColor w-full border-2 border-navColor rounded-full py-1 transition-all duration-500 ease-in-out';
+  'flex justify-center gap-2 text-navColor hover:text-white bg-white hover:bg-accent hover:border-accent w-full border-2 border-navColor rounded-full py-1 transition-all duration-500 ease-in-out';
 const isActiveStyle =
   'flex justify-center gap-2 text-white bg-navColor w-full border-2 border-navColor rounded-full py-1 transition-all duration-500 ease-in-out';
 
@@ -39,14 +39,13 @@ const Sidebar = ({ user, closeToggle }) => {
             Áreas de atuação:
           </h3>
           {expertises.slice(0, expertises.length).map((expertise) => (
-            <div className="ml-5 mr-5">
+            <div className="ml-5 mr-5" key={expertise.name}>
               <NavLink
                 to={`/expertise/${expertise.name}`}
                 className={({ isActive }) =>
                   isActive ? isActiveStyle : isNotActiveStyle
                 }
                 onClick={handleCloseSidebar}
-                key={expertise.name}
               >
                 {expertise.value}
               </NavLink>
