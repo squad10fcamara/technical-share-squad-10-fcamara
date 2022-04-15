@@ -9,8 +9,10 @@ const EmptyList = ({ image, message }) => {
     case 'empty':
       imageSrc = noMember;
       break;
+
     case 'noProfile':
       imageSrc = noProfile;
+
       break;
     case 'notFound':
       imageSrc = noSearch;

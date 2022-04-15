@@ -63,7 +63,9 @@ const UserProfile = () => {
                 render={(renderProps) => (
                   <button
                     type="button"
+
                     className="bg-white p-2 rounded-full cursor-pointer outline-none shadow-md hover:bg-black transition-all duration-500 ease-in-out"
+
                     onClick={renderProps.onClick}
                     disabled={renderProps.disabled}
                   >
@@ -78,7 +80,9 @@ const UserProfile = () => {
         </div>
 
         {user ? (
+
           <div className="flex flex-col justify-center items-center mt-2 lg:h-4/5 rounded-lg bg-gray-300">
+
             <div className="flex flex-row justify-center items-center">
               <img
                 src={brand}
@@ -89,10 +93,13 @@ const UserProfile = () => {
                 {user.position}
               </span>
             </div>
+
             <div className="mt-3 capitalize text-accent text-xl font-semibold">
               <span>{user.expertise}</span>
             </div>
             <div className="mt-5 w-full rounded-lg p-8 pb-12 bg-gray-300">
+
+
               <div className="mb-4 grid grid-cols-1 gap-4 bg-gray-50 p-5 rounded-lg shadow-lg">
                 <label className="text-black font-semibold text-lg">
                   Sobre
