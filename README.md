@@ -19,6 +19,62 @@ Esta aplicação ficará disponível online, onde você poderá testar suas func
 
 Esta aplicação utiliza chaves proprietárias e conteúdo sensível, que não permite ser compartilhado por motivos de sigilos de dados. Caso escolha realizar o clone do projeto para ser rodado localmente, seguir passos do documento descritos na sessão "Como rodar a aplicação localmente".
 
+  <h1> 🤝 Colaboradores - @squad10 </h1>
+
+<h2> Developers </h2>
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="#">
+        <img src="https://i.imgur.com/NJr70Hs.jpg" width="100px;" alt="Foto do David Pires"/><br>
+        <sub>
+          <b>David Pires</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://i.imgur.com/mR29dW0.jpg" width="100px;" alt="Foto do João G Paula"/><br>
+        <sub>
+          <b>João G. Paula</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://i.imgur.com/zGdiTjE.jpg" width="100px;" alt="Foto do Walter Souza"/><br>
+        <sub>
+          <b>Walter Souza</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
+  
+  <h2> UX/UI </h2>
+
+  <table>
+  <tr>
+    <td align="center">
+      <a href="#">
+        <img src="https://i.imgur.com/JojZAHW.jpg" width="100px;" alt="Foto da Flávia Moreira"/><br>
+        <sub>
+          <b>Flávia Moreira</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://i.imgur.com/kFaDBzs.jpg" width="100px;" alt="Foto da Sthefany Vargas"/><br>
+        <sub>
+          <b>Sthefany Vargas</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
 <h2>Como rodar a aplicação localmente</h2>
 
 1º - Realizar clone do projeto 
