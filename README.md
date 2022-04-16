@@ -135,13 +135,11 @@ Esta aplicação utiliza chaves proprietárias e conteúdo sensível, que não p
 
 2.d - Executar comando para iniciar aplicação: npm run dev
 
-2.e - Você poderá navegar entre os componentes alterando a url  de seu navegador seguindo os links abaixo ou acionando os botões disponíveis na aplicação. 
+2.e - Você poderá acessar a aplicação pela URL abaixo.
 
 http://localhost:3000/login 
 
-http://localhost:3000
 
-http://localhost:3000/user-profile/
 
 Configurando Chave para login google e Sanity. 
 
