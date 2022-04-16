@@ -237,7 +237,7 @@ https://www.sanity.io/docs/getting-started
 ![image](https://user-images.githubusercontent.com/78885070/163497244-4abf6587-f0e3-48b6-9ae0-1b7130404d9d.png)
 
 
- > npm install --global @sanity/cli && sanity init
+ > npm install --global @sanity/cli
 
 4.b - Após instalação local do sanity executar comando para iniciar servidor
 
