@@ -19,6 +19,14 @@ Esta aplicação ficará disponível online, onde você poderá testar suas func
 
 Esta aplicação utiliza chaves proprietárias e conteúdo sensível, que não permite ser compartilhado por motivos de sigilo de dados. Caso opte por realizar o clone do projeto para ser rodado localmente, seguir passos do documento descritos na sessão "Como rodar a aplicação localmente".
 
+## Linguagens Utilizadas:
+
+**Front-end:**
+React.js | Tailwindcss
+
+**Back-end:**
+Sanity.io | Headless CMS
+
   <h1> 🤝 Colaboradores - @squad10 </h1>
 
 <h2> Developers </h2>
@@ -74,6 +82,7 @@ Esta aplicação utiliza chaves proprietárias e conteúdo sensível, que não p
     </td>
   </tr>
 </table>
+
 
 <h2>Como rodar a aplicação localmente</h2>
 
