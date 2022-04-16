@@ -1,4 +1,7 @@
 
+<img src="https://i.imgur.com/z93qQ0b.png" alt="logo Orange Share"> 
+
+
 <div align="center" id="top"> 
   <h1>Versão responsiva</h1>
   <img src="./orange-mobile.gif" alt="orange share demo app responsivo" />  
@@ -11,7 +14,6 @@
 </div>
 
 
-<img src="https://i.imgur.com/z93qQ0b.png" alt="logo Orange Share"> 
 
 
 <h2>Sobre a aplicação</h2>
