@@ -1,4 +1,16 @@
 
+<div align="center" id="top"> 
+  <h1>Versão responsiva</h1>
+  <img src="./orange-mobile.gif" alt="orange share demo app responsivo" />  
+</div>
+<br>
+<br>
+<div align="center" id="top"> 
+  <h1>Versão desktop</h1>
+  <img src="./orange-desktop.gif" alt="orange share demo app desktop" />  
+</div>
+
+
 <img src="https://i.imgur.com/z93qQ0b.png" alt="logo Orange Share"> 
 
 
