@@ -25,7 +25,7 @@ Esta aplicação utiliza chaves proprietárias e conteúdo sensível, que não p
 React.js | Tailwindcss
 
 **Back-end:**
-Sanity.io | Headless CMS
+Headless CMS Sanity.io
 
   <h1> 🤝 Colaboradores - @squad10 </h1>
 
