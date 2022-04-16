@@ -12,7 +12,7 @@ Precisando tirar alguma dúvida rápida? Quer bater um papo sobre determinada li
 
 Esta aplicação ficará disponível online, onde você poderá testar suas funcionalidades hands-on.
 
-*<h4>Clique aqui e veja o Deploy da aplicação </h4>*
+*<h4>[Clique aqui](https://orangeshare-squad10.netlify.app) e veja o Deploy da aplicação </h4>*
 
 
 *Observação:*
